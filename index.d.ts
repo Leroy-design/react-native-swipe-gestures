@@ -32,6 +32,11 @@ declare module 'react-native-swipe-gestures' {
      * @default 5
      */
     gestureIsClickThreshold?: number;
+
+    detectSwipeUp?: boolean,
+    detectSwipeDown?: boolean,
+    detectSwipeLeft?: boolean,
+    detectSwipeRight?: boolean
   }
 
   class GestureRecognizer extends Component<GestureRecognizerProps> {}
