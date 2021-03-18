@@ -1,13 +1,13 @@
 "use strict";
 
-import React, {Component} from "react";
-import {View, PanResponder} from "react-native";
+import React, { Component } from "react";
+import { View, PanResponder } from "react-native";
 
 export const swipeDirections = {
-    SWIPE_UP: "SWIPE_UP",
-    SWIPE_DOWN: "SWIPE_DOWN",
-    SWIPE_LEFT: "SWIPE_LEFT",
-    SWIPE_RIGHT: "SWIPE_RIGHT"
+  SWIPE_UP: "SWIPE_UP",
+  SWIPE_DOWN: "SWIPE_DOWN",
+  SWIPE_LEFT: "SWIPE_LEFT",
+  SWIPE_RIGHT: "SWIPE_RIGHT"
 };
 
 const swipeConfig = {
@@ -61,13 +61,6 @@ class GestureRecognizer extends Component {
         );
     }
 
-    _gestureIsClick(gestureState) {
-        return (
-            Math.abs(gestureState.dx) < swipeConfig.gestureIsClickThreshold &&
-            Math.abs(gestureState.dy) < swipeConfig.gestureIsClickThreshold
-        );
-    }
-
     _validateSwipe(gestureState) {
         const {
             detectSwipeUp,
@@ -82,6 +75,13 @@ class GestureRecognizer extends Component {
             (detectSwipeDown && swipeDirection === SWIPE_DOWN) ||
             (detectSwipeLeft && swipeDirection === SWIPE_LEFT) ||
             (detectSwipeRight && swipeDirection === SWIPE_RIGHT)
+        );
+    }
+
+    _gestureIsClick(gestureState) {
+        return (
+            Math.abs(gestureState.dx) < swipeConfig.gestureIsClickThreshold &&
+            Math.abs(gestureState.dy) < swipeConfig.gestureIsClickThreshold
         );
     }
 
