@@ -103,16 +103,16 @@ class GestureRecognizer extends Component {
         onSwipe && onSwipe(swipeDirection, gestureState);
         switch (swipeDirection) {
             case SWIPE_LEFT:
-                onSwipeLeft && this.props.config.detectSwipeLeft && onSwipeLeft(gestureState);
+                onSwipeLeft && this.swipeConfig.detectSwipeLeft && onSwipeLeft(gestureState);
                 break;
             case SWIPE_RIGHT:
-                onSwipeRight && this.props.config.detectSwipeRight && onSwipeRight(gestureState);
+                onSwipeRight && this.swipeConfig.detectSwipeRight && onSwipeRight(gestureState);
                 break;
             case SWIPE_UP:
-                onSwipeUp && this.props.config.detectSwipeUp && onSwipeUp(gestureState);
+                onSwipeUp && this.swipeConfig.detectSwipeUp && onSwipeUp(gestureState);
                 break;
             case SWIPE_DOWN:
-                onSwipeDown && this.props.config.detectSwipeDown && onSwipeDown(gestureState);
+                onSwipeDown && this.swipeConfig.detectSwipeDown && onSwipeDown(gestureState);
                 break;
         }
     }
